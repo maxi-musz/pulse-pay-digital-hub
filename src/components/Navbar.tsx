@@ -27,6 +27,18 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleSignIn = () => {
+    const openSignInBtn = document.getElementById('open-signin');
+    if (openSignInBtn) openSignInBtn.click();
+    setIsOpen(false);
+  };
+
+  const handleRegister = () => {
+    const openRegisterBtn = document.getElementById('open-register');
+    if (openRegisterBtn) openRegisterBtn.click();
+    setIsOpen(false);
+  };
+
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Services', href: '#services' },
@@ -60,10 +72,17 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-fintech-purple text-fintech-purple hover:bg-fintech-purple/10">
+            <Button 
+              variant="outline" 
+              className="border-fintech-purple text-fintech-purple hover:bg-fintech-purple/10"
+              onClick={handleSignIn}
+            >
               Sign In
             </Button>
-            <Button className="bg-fintech-purple hover:bg-fintech-deep-purple text-white">
+            <Button 
+              className="bg-fintech-purple hover:bg-fintech-deep-purple text-white"
+              onClick={handleRegister}
+            >
               Get Started
             </Button>
           </div>
@@ -91,10 +110,17 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex flex-col space-y-3">
-            <Button variant="outline" className="border-fintech-purple text-fintech-purple hover:bg-fintech-purple/10 w-full">
+            <Button 
+              variant="outline" 
+              className="border-fintech-purple text-fintech-purple hover:bg-fintech-purple/10 w-full"
+              onClick={handleSignIn}
+            >
               Sign In
             </Button>
-            <Button className="bg-fintech-purple hover:bg-fintech-deep-purple text-white w-full">
+            <Button 
+              className="bg-fintech-purple hover:bg-fintech-deep-purple text-white w-full"
+              onClick={handleRegister}
+            >
               Get Started
             </Button>
           </div>
